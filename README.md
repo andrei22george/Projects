@@ -6,7 +6,7 @@ Java. Sliding Puzzle Game.
   - uses Java Swing for the GUI
 
 Assembly. Battleships
-  - Battleships game made using Assembly as part of my Assembly Language Programming class
+  - battleships game made using Assembly as part of my Assembly Language Programming class
   - uses a custom framwork for creating the user interface
   - i implemented both the user interface and the game in a 8 x 8 and 10 x 10 board
 
