@@ -4,8 +4,7 @@ a brief of all my computer science related projects.
 ## *Java*. Sliding Puzzle Game
   - a 3 x 3 Sliding Puzzle created in Java as part of my OOP class
   - uses Java Swing for the GUI
-  - 9 squared pictures, randomly shuffled
-  - displays a complete picture when solved
+  - 9 squared pictures, randomly shuffled, displays a complete picture when solved
   - displays win / lose message depending on the number of moves 
 
 ## *Assembly*. Battleships
