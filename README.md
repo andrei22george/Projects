@@ -19,7 +19,7 @@ a brief of all my computer science related projects.
   - its goal is to simulate the fuctionality of an elevator
   - has different sensors (simulated) such as weight limiter, doors can't close while a person is standing in the door
   
-## *MySQL and Java (JavaFX)*. University managing platform
+## *MySQL and Java (JavaFX)*. University Management Platform
   - developed an application for managing an University with a partener as part of my Databases class
   - implemented a database with users (students, professors, admins, superadmins)
   - each user has specific privileges and features (e.g., see personal data, join courses, create / join groups, send messages, create activities, update data etc.)
