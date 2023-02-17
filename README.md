@@ -11,7 +11,7 @@ a brief of all my computer science related projects.
   - used C++ to implement various Data Structures and Algorithms such as Heaps, Trees, Sorting Methods, Hash Tabeles, Disjoint Sets, Graph algorithms (Kruskal, Tarjan, BFS, DFS)
   - analised each one on randomly generated test cases
   - generated graphs that show the performance on each one for an increasing number of tests
-  - part of a lab assignment with final grade: 10.00/10.00
+  - part of a lab assignment where my final grade was: 10.00/10.00
 
 ## *Java*. Sliding Puzzle Game
   - a 3 x 3 Sliding Puzzle created in Java as part of my OOP class
