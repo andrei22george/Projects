@@ -1,5 +1,6 @@
 # Projects
 a brief of all my computer science related projects.
+languages used include: C++, Java, SQL, Assembly and VHDL
   
 ## *MySQL and Java (JavaFX)*. University Management Platform
   - developed an application for managing an University with a partener as part of my Databases class
