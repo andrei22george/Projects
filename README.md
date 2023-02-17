@@ -24,3 +24,8 @@ a brief of all my computer science related projects.
   - implemented a database with users (students, professors, admins, superadmins)
   - each user has specific privileges and features (e.g., see personal data, join courses, create / join groups, send messages, create activities, update data etc.)
   - implemented user interface for each role using JavaFX
+
+## *C++*. Data Structures and Algorithms Analysis
+  - used C++ to implement essential Data Structures and Algorithms
+  - analised each one on randomly generated test cases
+  - generated graphs that show the performance on each one for an increasing number of tests
