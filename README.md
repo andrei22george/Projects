@@ -19,14 +19,14 @@ a brief of all my computer science related projects.
   - 9 squared pictures, randomly shuffled, displays a complete picture when solved
   - displays win / lose message depending on the number of moves 
 
-## *Assembly*. Battleships
-  - battleships game made using Assembly as part of my Assembly Language Programming class
-  - uses a custom framework for creating the user interface
-  - i implemented both the user interface and the game in a 8 x 8 and 10 x 10 board
-  - prints win / lose messages depending on the number of hits / misses
-
 ## *VHDL*. Elevator
   - elevator project made with a partener during my Digital System Design class
   - was implemented on a Basys 3 Artix-7 FPGA Board
   - its goal is to simulate the fuctionality of an elevator
   - has different sensors (simulated) such as weight limiter, doors can't close while a person is standing in the door
+
+## *Assembly*. Battleships
+  - battleships game made using Assembly as part of my Assembly Language Programming class
+  - uses a custom framework for creating the user interface
+  - i implemented both the user interface and the game in a 8 x 8 and 10 x 10 board
+  - prints win / lose messages depending on the number of hits / misses
