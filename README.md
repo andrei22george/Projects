@@ -26,6 +26,6 @@ a brief of all my computer science related projects.
   - implemented user interface for each role using JavaFX
 
 ## *C++*. Data Structures and Algorithms Analysis
-  - used C++ to implement essential Data Structures and Algorithms
+  - used C++ to implement various Data Structures and Algorithms such as Heaps, Trees, Sorting Methods, Hash Tabeles, Disjoint Sets, Graph algorithms (Kruskal, Tarjan, BFS, DFS)
   - analised each one on randomly generated test cases
   - generated graphs that show the performance on each one for an increasing number of tests
