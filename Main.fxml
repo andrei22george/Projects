@@ -1,0 +1,1056 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Text fill="WHITE" layoutX="501.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+         <font>
+            <Font name="Bodoni MT" size="39.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="667.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../dke2.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="611.0" layoutY="693.0" mnemonicParsing="false" onAction="#loginPageShow" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #decda0;" text="Intra in cont" />
+      <Button layoutX="748.0" layoutY="693.0" mnemonicParsing="false" onAction="#createPageShow" style="-fx-background-color: #decda0;" text="Creeaza cont nou" />
+      <AnchorPane fx:id="pageLogin" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <TextField fx:id="emailLogin" layoutX="270.0" layoutY="117.0" promptText="email" />
+            <PasswordField fx:id="passwordLogin" layoutX="270.0" layoutY="156.0" promptText="parola" />
+            <Text fill="WHITE" layoutX="209.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="roleLogin" layoutX="239.0" layoutY="66.0" prefWidth="150.0" promptText="Alegeti rolul" visible="false">
+            	<items>
+                	<FXCollections fx:factory="observableArrayList">
+                    	<String fx:id="student" fx:value="student" />
+                   		<String fx:id="profesor" fx:value="profesor" />
+                   		<String fx:id="admin" fx:value="admin" />
+                   		<String fx:id="superadmin" fx:value="superadmin" />
+                	</FXCollections>
+            	</items>
+ 			</ComboBox>
+            <Text fill="WHITE" layoutX="210.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parola">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="loginButton" layoutX="239.0" layoutY="216.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #DDA029;" text="Intra in cont" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="superadminPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="23.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bine ai venit, ">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutSuperadmin" layoutX="665.0" layoutY="825.0" mnemonicParsing="false" onAction="#backSuperadmin" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Log out" />
+            <Button fx:id="dateSuperadmin" layoutX="37.0" layoutY="153.0" mnemonicParsing="false" onAction="#showDatePersonale" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Date personale" />
+            <Button fx:id="dataUpdateSuperadmin" layoutX="37.0" layoutY="191.0" mnemonicParsing="false" onAction="#updatePanelShow" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Modificare date personale" />
+            <Label fx:id="printSuperadminName" layoutX="211.0" layoutY="84.0" prefHeight="39.0" prefWidth="840.0" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="superadminShowDeleteButton" layoutX="37.0" layoutY="229.0" mnemonicParsing="false" onAction="#deletePanelShow" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Sterge utilizatori" />
+            <Button fx:id="superadminShowDataPanelButton" layoutX="37.0" layoutY="267.0" mnemonicParsing="false" onAction="#allDataShow" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vizualizare date" />
+            <Button fx:id="superadminShowAssig" layoutX="37.0" layoutY="307.0" mnemonicParsing="false" onAction="#showAssProf" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Asignare materie" />
+            <Button fx:id="adminSeeCSPane" layoutX="37.0" layoutY="343.0" mnemonicParsing="false" onAction="#showCS" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vezi studenti la curs" />
+            <Button fx:id="superadminShowSUSButton" layoutX="37.0" layoutY="379.0" mnemonicParsing="false" onAction="#showSUS" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Inregistrare student la curs" />
+            <Button fx:id="showAssignDepSA" layoutX="37.0" layoutY="414.0" mnemonicParsing="false" onAction="#showAssignDepPane" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Departament profesor" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="adminPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="23.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bine ai venit, ">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutAdmin" layoutX="665.0" layoutY="825.0" mnemonicParsing="false" onAction="#backAdmin" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Log out" />
+            <Button fx:id="dateAdmin" layoutX="23.0" layoutY="145.0" mnemonicParsing="false" onAction="#showDatePersonale" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Date personale" />
+            <Button fx:id="dataUpdateAdmin" layoutX="23.0" layoutY="183.0" mnemonicParsing="false" onAction="#updatePanelShow" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Modificare date personale" />
+            <Label fx:id="printAdminName" layoutX="211.0" layoutY="84.0" prefHeight="39.0" prefWidth="875.0" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="adminShowDeleteButton" layoutX="23.0" layoutY="221.0" mnemonicParsing="false" onAction="#deletePanelShow" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Sterge utilizatori" />
+            <Button fx:id="adminShowDataPanelButton" layoutX="23.0" layoutY="259.0" mnemonicParsing="false" onAction="#allDataShow" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vizualizare date" />
+            <Button fx:id="adminShowAssig" layoutX="23.0" layoutY="297.0" mnemonicParsing="false" onAction="#showAssProf" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Asignare materie" />
+            <Button fx:id="superadminSeeCSPane" layoutX="23.0" layoutY="336.0" mnemonicParsing="false" onAction="#showCS" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vezi studenti la curs" />
+            <Button fx:id="adminShowSUSButton" layoutX="23.0" layoutY="373.0" mnemonicParsing="false" onAction="#showSUS" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Inregistrare student la curs" />
+            <Button fx:id="showAssignDepA" layoutX="23.0" layoutY="409.0" mnemonicParsing="false" onAction="#showAssignDepPane" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Departament profesor" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="studentPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="23.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bine ai venit, ">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutStudent" layoutX="746.0" layoutY="829.0" mnemonicParsing="false" onAction="#backStudent" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Log out" />
+            <Button fx:id="dateStudent" layoutX="23.0" layoutY="162.0" mnemonicParsing="false" onAction="#showDatePersonale" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Date personale" />
+            <Button fx:id="signUpCourseButton" layoutX="23.0" layoutY="202.0" mnemonicParsing="false" onAction="#signUpCourse" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Inscriere curs" />
+            <Button fx:id="giveUpCourseButton" layoutX="23.0" layoutY="243.0" mnemonicParsing="false" onAction="#giveUpCourse" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Renuntare curs" />
+            <Button fx:id="getStudentGradesButton" layoutX="23.0" layoutY="284.0" mnemonicParsing="false" onAction="#getStudentGrades" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vizualizare note" />
+            <Button fx:id="joinGroupButton" layoutX="23.0" layoutY="324.0" mnemonicParsing="false" onAction="#joinGroup" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Alaturare la grup" />
+            <Button fx:id="viewGroupMembersButton" layoutX="23.0" layoutY="365.0" mnemonicParsing="false" onAction="#viewGroupMembers" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vizualizare membrii grup" />
+            <AnchorPane fx:id="sendMessagePane" layoutX="255.0" layoutY="200.0" prefHeight="535.0" prefWidth="1090.0" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trimite mesaje in grup">
+                     <font>
+                        <Font name="Bodoni MT" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introdu mai jos un mesaje si alege materia in grupul careia doresti sa il trimiti Atentie! Toti membrii grupului pot vedea mesajul trimis de tine" wrappingWidth="442.267578125">
+                     <font>
+                        <Font name="Bodoni MT" size="23.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="sendMessageButton" layoutX="225.0" layoutY="424.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Trimite mesaj" />
+                  <Button fx:id="backSendMessageButton" layoutX="575.0" layoutY="509.0" mnemonicParsing="false" onAction="#hideSendMessage" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+                  <TextArea fx:id="textMesaj" layoutX="58.0" layoutY="207.0" prefHeight="200.0" prefWidth="442.0" promptText="Scrie un mesaj..." />
+                  <Text fill="WHITE" layoutX="575.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vezi mesaje din grup">
+                     <font>
+                        <Font name="Bodoni MT" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="575.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apasa butonul de mai jos pentru a vedea ultimele 5 mesaje trimise intr-un grup ales" wrappingWidth="442.267578125">
+                     <font>
+                        <Font name="Bodoni MT" size="23.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="viewMessageButton" layoutX="727.0" layoutY="424.0" mnemonicParsing="false" onAction="#getMessage" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Vezi mesaje" />
+                  <Label fx:id="showMessageLabel" layoutX="600.0" layoutY="193.0" prefHeight="150.0" prefWidth="429.0" textFill="WHITE">
+                     <font>
+                        <Font name="Bodoni MT" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="showSuggestedButton" layoutX="391.0" layoutY="509.0" mnemonicParsing="false" onAction="#showSuggestions" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #DDA029;" text="Vezi sugestii de membrii" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addActivityPane" layoutX="255.0" layoutY="200.0" prefHeight="535.0" prefWidth="1090.0" visible="false">
+               <children>
+                  <TextField fx:id="titluActivitate" layoutX="58.0" layoutY="208.0" prefHeight="25.0" prefWidth="196.0" promptText="Titlul activitatii" />
+                  <DatePicker fx:id="dataActivitate" layoutX="58.0" layoutY="250.0" prefHeight="25.0" prefWidth="196.0" promptText="Alegeti data" />
+                  <TextField fx:id="durataActivitate" layoutX="58.0" layoutY="292.0" prefHeight="25.0" prefWidth="196.0" promptText="Durata activitatii" />
+                  <TextField fx:id="numarMinim" layoutX="303.0" layoutY="292.0" prefHeight="25.0" prefWidth="196.0" promptText="Numar minim participanti" />
+                  <Text fill="WHITE" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adaugare activitate la grup">
+                     <font>
+                        <Font name="Bodoni MT" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introdu toate detaliile necesare in spatiile de mai jos pentru a adauga o noua activitate la grup" wrappingWidth="516.267578125">
+                     <font>
+                        <Font name="Bodoni MT" size="25.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="addActivityButton" layoutX="231.0" layoutY="352.0" mnemonicParsing="false" onAction="#addActivity" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Adauga activitate" />
+                  <Button fx:id="backAddActivityButton" layoutX="520.0" layoutY="468.0" mnemonicParsing="false" onAction="#hideAddActivity" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+                  <TextField fx:id="numeProfAddAc" layoutX="303.0" layoutY="208.0" prefHeight="25.0" prefWidth="196.0" promptText="Adauga numele unui profesor" />
+                  <TextField fx:id="prenumeProfAddAc" layoutX="303.0" layoutY="250.0" prefHeight="25.0" prefWidth="196.0" promptText="Adauga prenumele unui profesor" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="addActivityOptionButton" layoutX="23.0" layoutY="407.0" mnemonicParsing="false" onAction="#showAddActivity" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Adauga activitate" />
+            <Label fx:id="printStudentName" layoutX="211.0" layoutY="84.0" prefHeight="39.0" prefWidth="790.0" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="showSendMessageButton" layoutX="23.0" layoutY="447.0" mnemonicParsing="false" onAction="#showSendMessage" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Mesaje grup" />
+            <Button fx:id="fgButton" layoutX="23.0" layoutY="486.0" mnemonicParsing="false" onAction="#getFinalGrades" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Note finale" />
+            <Label fx:id="studentTodayLabel" layoutX="739.0" layoutY="19.0" prefHeight="141.0" prefWidth="690.0" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="pageCreate" layoutX="434.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;" visible="false">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <children>
+            <Text fill="WHITE" layoutX="322.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresa">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="lastNameCreate" layoutX="128.0" layoutY="30.0" promptText="nume" />
+            <Text fill="WHITE" layoutX="49.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="49.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <ComboBox fx:id="roleCreate" layoutX="323.0" layoutY="193.0" prefHeight="25.0" prefWidth="227.0" promptText="Alegeti rolul">
+            	<items>
+                	<FXCollections fx:factory="observableArrayList">
+                    	<String fx:id="student" fx:value="student" />
+                   		<String fx:id="profesor" fx:value="profesor" />
+                   		<String fx:id="admin" fx:value="admin" />
+                   		<String fx:id="superadmin" fx:value="superadmin" />
+                	</FXCollections>
+            	</items>
+            </ComboBox>
+            <TextField fx:id="emailCreate" layoutX="128.0" layoutY="110.0" promptText="email" />
+            <PasswordField fx:id="passwordCreate" layoutX="128.0" layoutY="152.0" promptText="parola" />
+            <Text fill="WHITE" layoutX="49.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="49.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parola">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="49.0" layoutY="211.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNP">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="firstNameCreate" layoutX="128.0" layoutY="69.0" promptText="prenume" />
+            <TextField fx:id="cnpCreate" layoutX="128.0" layoutY="193.0" promptText="CNP" />
+            <TextField fx:id="adressCreate" layoutX="401.0" layoutY="29.0" promptText="adresa" />
+            <Text fill="WHITE" layoutX="322.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="telefon">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="322.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IBAN">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="323.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numar contract" wrappingWidth="65.0830078125">
+               <font>
+                  <Font name="Bodoni MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="telCreate" layoutX="401.0" layoutY="68.0" promptText="telefon" />
+            <TextField fx:id="contractCreate" layoutX="402.0" layoutY="152.0" promptText="numar contract" />
+            <Button fx:id="createButton" layoutX="208.0" layoutY="263.0" mnemonicParsing="false" onAction="#create" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Creeaza cont nou" />
+            <TextField fx:id="ibanCreate" layoutX="401.0" layoutY="109.0" promptText="IBAN" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="profesorPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="23.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bine ai venit, ">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="logoutProfesor" layoutX="665.0" layoutY="825.0" mnemonicParsing="false" onAction="#backProfesor" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Log out" />
+            <Button fx:id="dateProfesor" layoutX="23.0" layoutY="162.0" mnemonicParsing="false" onAction="#showDatePersonale" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Date personale" />
+            <Label fx:id="printProfesorName" layoutX="211.0" layoutY="84.0" prefHeight="39.0" prefWidth="820.0" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="cataloguePane" layoutX="255.0" layoutY="200.0" prefHeight="601.0" prefWidth="1090.0" visible="false">
+               <children>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Catalog">
+                     <font>
+                        <Font name="Bodoni MT" size="30.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="hideCatalogueButton" layoutX="509.0" layoutY="554.0" mnemonicParsing="false" onAction="#hideSeeCatalogue" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+                  <TableView fx:id="tableCatalogue" layoutX="54.0" layoutY="70.0" prefHeight="466.0" prefWidth="1019.0">
+                    <columns>
+                      <TableColumn fx:id="lastNameColumn" prefWidth="204.0" text="Nume" />
+                      <TableColumn fx:id="firstNameColumn" prefWidth="195.0" text="Prenume" />
+                        <TableColumn fx:id="materieColumn" prefWidth="251.0" text="Materie" />
+                        <TableColumn fx:id="tipActivitateColumn" prefWidth="245.0" text="Tipul activitatii" />
+                        <TableColumn fx:id="notaColumn" prefWidth="123.0" text="Nota" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addProgPane" layoutX="255.0" layoutY="200.0" prefHeight="535.0" prefWidth="1090.0" visible="false">
+               <children>
+                  <DatePicker fx:id="dataProgramare" layoutX="58.0" layoutY="215.0" prefHeight="25.0" prefWidth="196.0" promptText="Alegeti data" />
+                  <TextField fx:id="tipProgramare" layoutX="58.0" layoutY="294.0" prefHeight="25.0" prefWidth="196.0" promptText="Tipul activitatii" />
+                  <Text fill="WHITE" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programare activitate">
+                     <font>
+                        <Font name="Bodoni MT" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduceti toate detaliile necesare in spatiile de mai jos pentru a programa o noua activitate" wrappingWidth="516.267578125">
+                     <font>
+                        <Font name="Bodoni MT" size="25.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="addProgButton" layoutX="74.0" layoutY="393.0" mnemonicParsing="false" onAction="#addProg" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #DDA029;" text="Programeaza activitate" />
+                  <Button fx:id="backAddProgButton" layoutX="520.0" layoutY="468.0" mnemonicParsing="false" onAction="#hideAddProg" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+                  <TextField fx:id="oraProgramare" layoutX="58.0" layoutY="255.0" prefHeight="25.0" prefWidth="196.0" promptText="Introduceti ora in formatul hh:mm" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addGradePane" layoutX="255.0" layoutY="200.0" prefHeight="535.0" prefWidth="1090.0" visible="false">
+               <children>
+                  <TextField fx:id="addGradeFirstNameField" layoutX="58.0" layoutY="290.0" prefHeight="25.0" prefWidth="174.0" promptText="Prenume student" />
+                  <Text fill="WHITE" layoutX="58.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adaugre note">
+                     <font>
+                        <Font name="Bodoni MT" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Introduceti in campurile de mai jos numele, prenumele si nota studentului dorit si apoi selectati materia" wrappingWidth="516.267578125">
+                     <font>
+                        <Font name="Bodoni MT" size="25.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="addGradeButton" layoutX="72.0" layoutY="424.0" mnemonicParsing="false" onAction="#addGrade" prefHeight="25.0" prefWidth="142.0" style="-fx-background-color: #DDA029;" text="Adaugati nota" />
+                  <Button fx:id="hideGradePane" layoutX="520.0" layoutY="468.0" mnemonicParsing="false" onAction="#hideAddGrade" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+                  <TextField fx:id="addGradeLastNameField" layoutX="58.0" layoutY="249.0" prefHeight="25.0" prefWidth="174.0" promptText="Nume student" />
+                  <TextField fx:id="addGradeField" layoutX="56.0" layoutY="333.0" prefHeight="25.0" prefWidth="174.0" promptText="Nota student" />
+                  <TextField fx:id="addGradeActivitateField" layoutX="56.0" layoutY="376.0" prefHeight="25.0" prefWidth="174.0" promptText="Tipul activitatii" />
+               </children>
+            </AnchorPane>
+            <Button fx:id="setPercButton" layoutX="23.0" layoutY="201.0" mnemonicParsing="false" onAction="#setPerc" prefHeight="25.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Seteaza procentaj materii" />
+            <Button fx:id="showAddProgButton" layoutX="23.0" layoutY="241.0" mnemonicParsing="false" onAction="#showAddProg" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Programeaza activitate" />
+            <Button fx:id="seeCatalogueButton" layoutX="23.0" layoutY="281.0" mnemonicParsing="false" onAction="#seeCatalogue" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Vizualizare catalog" />
+            <Button fx:id="showGradePane" layoutX="23.0" layoutY="322.0" mnemonicParsing="false" onAction="#showAddGrade" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Adaugati note" />
+            <Button fx:id="downloadCatalogButton" layoutX="23.0" layoutY="362.0" mnemonicParsing="false" onAction="#downloadCatalogue" prefHeight="26.0" prefWidth="159.0" style="-fx-background-color: #DDA029;" text="Descarcare catalog" />
+            <Label fx:id="profTodayLabel" layoutX="735.0" layoutY="14.0" prefHeight="141.0" prefWidth="690.0" textFill="WHITE">
+               <font>
+                  <Font name="Bodoni MT" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="updateAdminPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="23.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificare date utilizatori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="backDataUpdate" layoutX="665.0" layoutY="825.0" mnemonicParsing="false" onAction="#backUpdate" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <AnchorPane fx:id="pageCreate1" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Text fill="WHITE" layoutX="322.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresa">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateLastName" layoutX="128.0" layoutY="69.0" promptText="nume" />
+                  <Text fill="WHITE" layoutX="49.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="49.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateEmail" layoutX="128.0" layoutY="149.0" promptText="email" />
+                  <PasswordField fx:id="updatePassword" layoutX="128.0" layoutY="191.0" promptText="parola" />
+                  <Text fill="WHITE" layoutX="49.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="49.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parola">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="322.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNP">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateFirstName" layoutX="128.0" layoutY="108.0" promptText="prenume" />
+                  <TextField fx:id="updateCNP" layoutX="401.0" layoutY="191.0" promptText="CNP" />
+                  <TextField fx:id="updateAdresa" layoutX="401.0" layoutY="29.0" promptText="adresa" />
+                  <Text fill="WHITE" layoutX="322.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="telefon">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="322.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IBAN">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="323.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numar contract" wrappingWidth="65.0830078125">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateTel" layoutX="401.0" layoutY="68.0" promptText="telefon" />
+                  <TextField fx:id="updateNumarContract" layoutX="402.0" layoutY="152.0" promptText="numar contract" />
+                  <Button fx:id="dataUpdateAdmin" layoutX="208.0" layoutY="263.0" mnemonicParsing="false" onAction="#updateDatePersonaleAdmin" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Modifica date" />
+                  <TextField fx:id="updateIBAN" layoutX="401.0" layoutY="109.0" promptText="IBAN" />
+                  <Text fill="WHITE" layoutX="49.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateID" layoutX="128.0" layoutY="29.0" promptText="id" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="548.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atentie! Sunteti logat ca Administrator. Puteti modifica datele personale ale urmatoarelor roluri: Student, Profesor" textAlignment="CENTER" wrappingWidth="369.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="updateSuperadminPanel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1247.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modificare date utilizatori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="backDataUpdate1" layoutX="665.0" layoutY="825.0" mnemonicParsing="false" onAction="#backUpdate" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <AnchorPane fx:id="pageCreate11" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Text fill="WHITE" layoutX="322.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresa">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateLastName1" layoutX="128.0" layoutY="69.0" promptText="nume" />
+                  <Text fill="WHITE" layoutX="49.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="49.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateEmail1" layoutX="128.0" layoutY="149.0" promptText="email" />
+                  <PasswordField fx:id="updatePassword1" layoutX="128.0" layoutY="191.0" promptText="parola" />
+                  <Text fill="WHITE" layoutX="49.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="49.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="parola">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="322.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNP">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateFirstName1" layoutX="128.0" layoutY="108.0" promptText="prenume" />
+                  <TextField fx:id="updateCNP1" layoutX="401.0" layoutY="191.0" promptText="CNP" />
+                  <TextField fx:id="updateAdresa1" layoutX="401.0" layoutY="29.0" promptText="adresa" />
+                  <Text fill="WHITE" layoutX="322.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="telefon">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="322.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IBAN">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="323.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numar contract" wrappingWidth="65.0830078125">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateTel1" layoutX="401.0" layoutY="68.0" promptText="telefon" />
+                  <TextField fx:id="updateNumarContract1" layoutX="402.0" layoutY="152.0" promptText="numar contract" />
+                  <Button fx:id="dataUpdateAdmin1" layoutX="208.0" layoutY="263.0" mnemonicParsing="false" onAction="#updateDatePersonaleSuperadmin" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Modifica date" />
+                  <TextField fx:id="updateIBAN1" layoutX="401.0" layoutY="109.0" promptText="IBAN" />
+                  <Text fill="WHITE" layoutX="49.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="updateID1" layoutX="128.0" layoutY="29.0" promptText="id" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="532.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atentie! Sunteti logat ca Super-Administrator. Puteti modifica datele personale ale urmatoarelor roluri: Student, Profesor, Administrator, Super-Administrator" textAlignment="CENTER" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="deleteSuperadminPanel" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1247.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stergere utilizatori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="superadminDeleteBack" layoutX="665.0" layoutY="770.0" mnemonicParsing="false" onAction="#backDelteUser" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <AnchorPane fx:id="pageCreate111" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="superadminDeleteButton" layoutX="208.0" layoutY="125.0" mnemonicParsing="false" onAction="#deleteUserSA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Sterge user" />
+                  <Text fill="WHITE" layoutX="186.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="superadminDelete" layoutX="265.0" layoutY="48.0" promptText="id" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="532.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atentie! Sunteti logat ca Super-Administrator. Puteti sterge useri cu rolurile: Student, Profesor, Administrator, Super-Administrator" textAlignment="CENTER" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="deleteAdminPanel" layoutX="20.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1247.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stergere utilizatori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="adminDeleteBack" layoutX="665.0" layoutY="770.0" mnemonicParsing="false" onAction="#backDelteUser" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <AnchorPane fx:id="pageCreate1111" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="adminDeleteButton" layoutX="208.0" layoutY="125.0" mnemonicParsing="false" onAction="#deleteUserA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Sterge user" />
+                  <Text fill="WHITE" layoutX="186.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="id">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="adminDelete" layoutX="265.0" layoutY="48.0" promptText="id" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="532.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atentie! Sunteti logat ca Administrator. Puteti sterge useri cu rolurile: Student, Profesor" textAlignment="CENTER" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="seeAllDataAdminPanel" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vizualizare date utilizatori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="adminShowDataBack" layoutX="665.0" layoutY="770.0" mnemonicParsing="false" onAction="#backAllData" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <AnchorPane fx:id="pageCreate11111" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="adminShowDataButton" layoutX="208.0" layoutY="150.0" mnemonicParsing="false" onAction="#seeAllDataA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Vezi date" />
+                  <Text fill="WHITE" layoutX="186.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="adminShowDataNume" layoutX="272.0" layoutY="48.0" promptText="nume" />
+                  <TextField fx:id="adminShowDataPrenume" layoutX="272.0" layoutY="84.0" promptText="prenume" />
+                  <Text fill="WHITE" layoutX="186.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="adminShowStudentData" layoutX="207.0" layoutY="185.0" mnemonicParsing="false" onAction="#seeStudentDataA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Cauta in studenti" />
+                  <Button fx:id="adminShowProfData" layoutX="207.0" layoutY="219.0" mnemonicParsing="false" onAction="#seeProfDataA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Cauta in profesori" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="532.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atentie! Sunteti logat ca Administrator. Puteti vizualiza datele userilor cu rolurile: Student, Profesor, Admin" textAlignment="CENTER" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="seeAllDataSuperadminPanel" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vizualizare date utilizatori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <Button fx:id="superadminShowDataBack" layoutX="665.0" layoutY="770.0" mnemonicParsing="false" onAction="#backAllData" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <AnchorPane fx:id="pageCreate11112" layoutX="420.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="superadminShowDataButton" layoutX="208.0" layoutY="150.0" mnemonicParsing="false" onAction="#seeAllDataSA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Cauta in toti userii" />
+                  <Text fill="WHITE" layoutX="186.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="superadminShowDataNume" layoutX="272.0" layoutY="48.0" promptText="nume" />
+                  <TextField fx:id="superadminShowDataPrenume" layoutX="272.0" layoutY="84.0" promptText="prenume" />
+                  <Text fill="WHITE" layoutX="186.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="superadminShowStudentData" layoutX="208.0" layoutY="184.0" mnemonicParsing="false" onAction="#seeStudentDataSA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Cauta in studenti" />
+                  <Button fx:id="superadminShowProfData" layoutX="208.0" layoutY="218.0" mnemonicParsing="false" onAction="#seeProfDataSA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Cauta in profesori" />
+                  <Button fx:id="superadminShowAdminData" layoutX="208.0" layoutY="252.0" mnemonicParsing="false" onAction="#seeAdminDataSA" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Cauta in admini" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="532.0" layoutY="321.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Atentie! Sunteti logat ca Super-Administrator. Puteti vizualiza datele userilor cu rolurile: Student, Profesor, Admin" textAlignment="CENTER" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="assPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Button fx:id="assBack" layoutX="678.0" layoutY="768.0" mnemonicParsing="false" onAction="#backAssProf" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asignare profesori">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="pageCreate11113" layoutX="256.0" layoutY="285.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="421.0" prefWidth="904.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="assButton" layoutX="389.0" layoutY="186.0" mnemonicParsing="false" onAction="#assProf" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Asigneaza" />
+                  <Text fill="WHITE" layoutX="23.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="numeAss" layoutX="109.0" layoutY="23.0" promptText="nume" />
+                  <TextField fx:id="prenumeAss" layoutX="109.0" layoutY="59.0" promptText="prenume" />
+                  <Text fill="WHITE" layoutX="23.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="23.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="materie">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="materieAss" layoutX="109.0" layoutY="98.0" promptText="materie" />
+                  <TextField fx:id="procentajCurs" layoutX="424.0" layoutY="22.0" promptText="procentaj curs" />
+                  <Text fill="WHITE" layoutX="338.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="curs">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="procentajSeminar" layoutX="424.0" layoutY="58.0" promptText="procentaj seminar" />
+                  <Text fill="WHITE" layoutX="338.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="seminar">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="procentajLab" layoutX="424.0" layoutY="97.0" promptText="procentaj laborator" />
+                  <Text fill="WHITE" layoutX="338.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="laborator">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <CheckBox fx:id="cbCurs" layoutX="299.0" layoutY="25.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="cbSeminar" layoutX="299.0" layoutY="61.0" mnemonicParsing="false" />
+                  <CheckBox fx:id="cbLab" layoutX="299.0" layoutY="100.0" mnemonicParsing="false" />
+                  <TextField fx:id="maxStud" layoutX="726.0" layoutY="57.0" promptText="numar maxim studenti" />
+                  <Text fill="WHITE" layoutX="605.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="numar maxim studenti" wrappingWidth="109.0">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="255.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Puteti asigna un curs unui profesor completand campurile de mai jos" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="csPane" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Button fx:id="backCSPane" layoutX="665.0" layoutY="770.0" mnemonicParsing="false" onAction="#backCS" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vizulizare studenti la curs">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="pageCreate11114" layoutX="255.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="904.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="showCS" layoutX="520.0" layoutY="35.0" mnemonicParsing="false" onAction="#seeCourseStudents" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Arata" />
+                  <Text fill="WHITE" layoutX="192.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="materie">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="materieCS" layoutX="278.0" layoutY="35.0" promptText="materie" />
+                  <TableView fx:id="tableCS" layoutX="214.0" layoutY="101.0" prefHeight="380.0" prefWidth="477.0">
+                     <columns>
+                        <TableColumn fx:id="firstNameColumnCS" prefWidth="233.0" text="Nume" />
+                        <TableColumn fx:id="lastNameColumnCS" minWidth="0.0" prefWidth="243.0" text="Prenume" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="255.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completati numele unui profesor in campul de mai jos si alegeti materia pentru a vedea studentii de la curs" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="susPane" layoutX="17.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Button fx:id="backSUSButton" layoutX="653.0" layoutY="771.0" mnemonicParsing="false" onAction="#backSUS" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inregistrare studenti la curs">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="255.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="904.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="signUpStud" layoutX="360.0" layoutY="422.0" mnemonicParsing="false" onAction="#signUpStudent" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Inregistreaza la curs" />
+                  <Text fill="WHITE" layoutX="304.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume profesor">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="numeProfSUS" layoutX="452.0" layoutY="99.0" promptText="nume profesor" />
+                  <Text fill="WHITE" layoutX="304.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume profesor">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="prenumeProfSUS" layoutX="452.0" layoutY="140.0" promptText="prenume profesor" />
+                  <Text fill="WHITE" layoutX="307.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="materie">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="materieSUS" layoutX="452.0" layoutY="178.0" promptText="materie" />
+                  <Text fill="WHITE" layoutX="307.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume student">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="numeStudSUS" layoutX="452.0" layoutY="214.0" promptText="nume student" />
+                  <Text fill="WHITE" layoutX="307.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume student">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="prenumeStudSUS" layoutX="452.0" layoutY="250.0" promptText="prenume student" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="255.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completati numele si prenumele studentului si profesorului si materia la care doriti sa inscrieti sutdentul in campurile de mai jos" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="23.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="assignDepPane" layoutX="17.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1440.0" style="-fx-background-color: #551320;" visible="false">
+         <children>
+            <Button fx:id="backAssignDep" layoutX="653.0" layoutY="771.0" mnemonicParsing="false" onAction="#hideAssignDepPane" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Inapoi" />
+            <Text fill="WHITE" layoutX="23.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="255.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Asignare departament profesor">
+               <font>
+                  <Font name="Bodoni MT" size="32.0" />
+               </font>
+            </Text>
+            <AnchorPane layoutX="255.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="904.0" style="-fx-background-color: #551320;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <children>
+                  <Button fx:id="assignDepButton" layoutX="360.0" layoutY="422.0" mnemonicParsing="false" onAction="#assignDep" prefHeight="25.0" prefWidth="184.0" style="-fx-background-color: #DDA029;" text="Asignare departament" />
+                  <Text fill="WHITE" layoutX="304.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nume profesor">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="numeAssignDep" layoutX="452.0" layoutY="99.0" promptText="nume profesor" />
+                  <Text fill="WHITE" layoutX="304.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prenume profesor">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="prenumeAssignDep" layoutX="452.0" layoutY="140.0" promptText="prenume profesor" />
+                  <Text fill="WHITE" layoutX="307.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="departament">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="departament" layoutX="452.0" layoutY="178.0" promptText="departament" />
+               </children>
+            </AnchorPane>
+            <Text fill="WHITE" layoutX="255.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Completati numele si prenumele si departamentul la care doriti sa asignati un profesor" wrappingWidth="375.9375">
+               <font>
+                  <Font name="Bodoni MT" size="19.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="23.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DELTA KAPPA EPSILON">
+               <font>
+                  <Font name="Bodoni MT" size="39.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="64.0" layoutX="504.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../dke2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="logoutAdmin1" layoutX="653.0" layoutY="823.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="109.0" style="-fx-background-color: #DDA029;" text="Log out" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</AnchorPane>
