@@ -27,7 +27,7 @@ languages used include: C++, Java, SQL, Assembly and VHDL.
   - has different sensors (simulated) such as weight limiter, doors can't close while a person is standing in the door
 
 ## *Assembly*. Battleships
-  - battleships game made using Assembly as part of my Assembly Language Programming class
+  - battleships game made using x86 Assembly as part of my Assembly Language Programming class
   - uses a custom framework for creating the user interface
   - i implemented both the user interface and the game in a 8 x 8 and 10 x 10 board
   - prints win / lose messages depending on the number of hits / misses
