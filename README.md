@@ -21,7 +21,7 @@ languages used include: C++, Java, SQL, Assembly and VHDL.
   - displays win / lose message depending on the number of moves 
 
 ## *VHDL*. Elevator
-  - elevator project made with a partener during my Digital System Design class
+  - elevator project made with a partner during my Digital System Design class
   - was implemented on a Basys 3 Artix-7 FPGA Board
   - its goal is to simulate the fuctionality of an elevator
   - has different sensors (simulated) such as weight limiter, doors can't close while a person is standing in the door
