@@ -9,7 +9,7 @@ languages used include: C++, Java, SQL, Assembly and VHDL.
   - implemented user interface for each role using JavaFX
 
 ## *C++*. Data Structures and Algorithms Analysis
-  - used C++ to implement various Data Structures and Algorithms such as Heaps, Trees, Sorting Methods, Hash Tabeles, Disjoint Sets, Graph algorithms (Kruskal, Tarjan, BFS, DFS)
+  - used C++ to implement various Data Structures and Algorithms such as Heaps, Trees, Sorting Methods, Hash Tables, Disjoint Sets, Graph algorithms (Kruskal, Tarjan, BFS, DFS)
   - analised each one on randomly generated test cases
   - generated graphs that show the performance on each one for an increasing number of tests
   - part of a lab assignment where my final grade was: 10.00/10.00
